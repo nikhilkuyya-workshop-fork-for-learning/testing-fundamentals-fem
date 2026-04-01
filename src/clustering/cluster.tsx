@@ -29,7 +29,7 @@ export default component$<ClusterProps>(({ dataset, width, height, size }) => {
               "--color": COLORS[i % COLORS.length],
             }}
           />
-        ))
+        )),
       )}
     </div>
   );

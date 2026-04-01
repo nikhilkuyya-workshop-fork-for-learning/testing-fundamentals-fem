@@ -33,5 +33,5 @@ export const Button = component$<ButtonProps>(
         <Slot />
       </button>
     );
-  }
+  },
 );

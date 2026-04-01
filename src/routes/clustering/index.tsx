@@ -45,7 +45,7 @@ type ClusterForm = Input<typeof ClusterSchema>;
 export const useFormLoader = routeLoader$<InitialValues<ClusterForm>>(
   ({ sharedMap, url }) => {
     return getClusterParams(sharedMap, url.searchParams);
-  }
+  },
 );
 
 export const useFormAction = formAction$<ClusterForm>(
@@ -53,7 +53,7 @@ export const useFormAction = formAction$<ClusterForm>(
     sharedMap.set(CLUSTER_PARAMS, values);
     // Runs on server
   },
-  valiForm$(ClusterSchema)
+  valiForm$(ClusterSchema),
 );
 
 export const useDataset = routeLoader$(({ sharedMap, url }) => {
@@ -61,7 +61,7 @@ export const useDataset = routeLoader$(({ sharedMap, url }) => {
   const clusters = cluster(
     loadDataset().slice(0, clusterParams.size),
     convertDistanceToDegrees(clusterParams.distance),
-    clusterParams.minClusterSize
+    clusterParams.minClusterSize,
   );
   return clusters;
 });
@@ -146,7 +146,7 @@ const CLUSTER_PARAMS = "clusterParams";
 
 function getClusterParams(
   sharedMap: Map<string, any>,
-  params: URLSearchParams
+  params: URLSearchParams,
 ): ClusterForm {
   let clusterParams = sharedMap.get(CLUSTER_PARAMS) as ClusterForm | undefined;
   if (!clusterParams) {

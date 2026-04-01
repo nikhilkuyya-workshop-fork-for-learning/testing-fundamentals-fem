@@ -9,7 +9,7 @@ console.log(__workspace);
 
 let inputStream = createReadStream(
   join(__workspace, "dataset", "traffic-crashes-crashes-1.csv"),
-  "utf8"
+  "utf8",
 );
 
 let records = [];
@@ -22,7 +22,7 @@ inputStream
       parseNumbers: true,
       parseBooleans: true,
       trim: true,
-    })
+    }),
   )
   .on("data", function (row) {
     if (LATITUDE === -1 && LONGITUDE === -1) {
@@ -42,6 +42,6 @@ inputStream
       (err) => {
         if (err) throw err;
         console.log("Data has been written to dataset.json");
-      }
+      },
     );
   });

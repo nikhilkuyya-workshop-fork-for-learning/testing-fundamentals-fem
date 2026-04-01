@@ -34,7 +34,7 @@ export interface Clusters {
 export function cluster(
   dataset: Location[],
   distance: number = NEIGHBORHOOD_RADIUS,
-  minClusterSize: number = 10
+  minClusterSize: number = 10,
 ): Clusters {
   const clusteringAlgorithm = new clusterAlgo.DBSCAN();
   const data = dataset.map(({ lat, lng }) => [lat, lng]);
