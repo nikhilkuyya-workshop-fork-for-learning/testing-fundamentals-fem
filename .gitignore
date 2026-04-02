@@ -13,3 +13,7 @@ node_modules
 storybook-static
 .DS_Store
 **/.DS_Store
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
