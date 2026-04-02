@@ -14,17 +14,17 @@ test.describe("Clustering Page", () => {
     test("should fill the form with query Parameters", async ({ }) => {
         const queryParams = { size: "1000", distance: "100", minClusterSize: "3" };
         await clusteringPage.gotoWithQueryParams(queryParams);
-        expect(await clusteringPage.sizeInput).toHaveValue("1000");
-        expect(await clusteringPage.distanceInput).toHaveValue("100");
-        expect(await clusteringPage.minClusterSizeInput).toHaveValue("3");
+        await expect(clusteringPage.sizeInput).toHaveValue("1000");
+        await expect(clusteringPage.distanceInput).toHaveValue("100");
+        await expect(clusteringPage.minClusterSizeInput).toHaveValue("3");
     })
 
     test("should also show the cluster in text", async ({ }) => {
         const queryParams = { size: "9999", distance: "99", minClusterSize: "7" };
         await clusteringPage.gotoWithQueryParams(queryParams);
-        await expect(await clusteringPage.size).toHaveText("9999");
-        await expect(await clusteringPage.distance).toHaveText("99");
-        await expect(await clusteringPage.minClusterSize).toHaveText("7");
+        await expect(clusteringPage.size).toHaveText("9999");
+        await expect(clusteringPage.distance).toHaveText("99");
+        await expect(clusteringPage.minClusterSize).toHaveText("7");
     })
 })
 
