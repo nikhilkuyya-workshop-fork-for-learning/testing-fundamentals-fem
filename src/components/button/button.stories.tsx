@@ -1,7 +1,7 @@
 import { $ } from "@builder.io/qwik";
 import type { Meta, StoryObj } from "storybook-framework-qwik";
 import { Button, type ButtonProps } from "./button";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 const meta: Meta<ButtonProps> = {
   component: Button,

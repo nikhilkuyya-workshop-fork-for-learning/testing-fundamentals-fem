@@ -9,3 +9,7 @@ node_modules
 /blob-report/
 /playwright/.cache/
 /coverage/
+*storybook.log
+storybook-static
+.DS_Store
+**/.DS_Store
